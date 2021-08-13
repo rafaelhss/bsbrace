@@ -1,7 +1,7 @@
     <!DOCTYPE html>
     <html lang="en">
     <head>
-        <title>Rafas Home Page</title>
+        <title>BSB Race</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="//aframe.io/releases/1.1.0/aframe.min.js"></script>
