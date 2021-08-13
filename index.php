@@ -53,7 +53,7 @@
             
             <!--<a-sky src="#sky"></a-sky> -->
             
-            <a-camera id="cam"  listener="stepFactor:0.005" position="0 1000 -2400" >
+            <a-camera id="cam"  listener="stepFactor:0.105" position="0 1000 -2400" >
 
             </a-camera>
             
