@@ -5,8 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="//aframe.io/releases/1.1.0/aframe.min.js"></script>
-        <script src="//cdn.jsdelivr.net/gh/donmccurdy/aframe-physics-system@v3.2.0/dist/aframe-physics-system.min.js"></script>
-        
+    
         <style>
             #score{
                 position: absolute;
@@ -50,9 +49,7 @@
 
                 <img id="igrejaimg" src="images/igreja.png" crossorigin="anonymous" /> 
                 <img id="busimg" src="images/bus.jpg" crossorigin="anonymous" /> 
-                <a-mixin id="text" text="side: double; color: red; width: 80; align: center; value: anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B anos na serie B"></a-mixin>
-                <a-mixin id="instructions" text="side: double; color: blue; width: 400; align: center; value: A cada visita diaria consecutiva voce destrava um novo nivel com novos conteudos. Se ficar um dia sem acessar o site, volta ao nivel 0."></a-mixin>
-            </a-assets>
+             </a-assets>
             
             <!--<a-sky src="#sky"></a-sky> -->
             
@@ -126,14 +123,12 @@
                     echo "<a-entity
                     dynamic-body
                     geometry=\"primitive: box; height: 200; width: 600; depth: 200; color: tomato;\"
-                    mixin=\"text\"
                     material=\"opacity: 1; src: #ministerioimg; repeat: 3 3;\"
                     position=\"2000 100 ". $i ."\"></a-entity>    ";
                     
                     echo "<a-entity
                     dynamic-body
                     geometry=\"primitive: box; height: 200; width: 600; depth: 200; color: tomato;\"
-                    mixin=\"text\"
                     material=\"opacity: 1; src: #ministerioimg; repeat: 3 3;\"
                     position=\"-2000 100 ". $i ."\"></a-entity>    ";
 
@@ -264,7 +259,7 @@
         for(var i = 0; i < enemies.length; i++){
             enemyinterval(i);
         }
-    }, 5)
+    }, 250)
 
     setInterval(function(){
         if(accelerating && hip <= maxhip){
@@ -451,4 +446,7 @@
 
 
     </script>
+
+    <script src="//cdn.jsdelivr.net/gh/donmccurdy/aframe-physics-system@v3.2.0/dist/aframe-physics-system.min.js"></script>
+       
     </html>
