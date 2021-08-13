@@ -268,20 +268,20 @@
 
     setInterval(function(){
         if(accelerating && hip <= maxhip){
-            hip++;
+            hip = hip + 10;
             //document.getElementById("ghost").setAttribute("color", "red");  
             //console.log("maxhip: " + maxhip);
             
         } 
         if((!accelerating && hip >= minhip)){
-            hip--;
+            hip = hip-10;
             //document.getElementById("ghost").setAttribute("color", "blue");  
         }
         if (hip >= maxhip){
-            hip = hip - 3;
+            hip = hip - 15;
         }
 
-    }, 10)   
+    }, 100)   
 
 
 
