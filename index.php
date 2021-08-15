@@ -64,7 +64,7 @@
                         <span id="acc"></span>
                 </div>
                 <div id="time">
-                    <div class="hourglass"></div>
+                    <div id="hourglass"></div>
                 </div>
             </div>
             <div>
@@ -104,7 +104,7 @@
             animation="property: position; from:0 620 -1620; to: 0 640 1300; dur: 2500;  delay: 90000; easing: easeInOutQuad; loop: 0;"
             material="opacity: 1; src: #logoimg; transparent:true" cursor-listener position="0 1220 80" width="150" height="25" depth="3" visible="true"></a-box>
             <a-box id="btnstart"  
-            animation="property: position; from:0 600 -1640; to: 0 620 1300; dur: 2500; delay: 90000; easing: easeInOutQuad; loop: 0;"
+            animation="property: position; from:0 600 -1650; to: 0 620 1300; dur: 2500; delay: 90000; easing: easeInOutQuad; loop: 0;"
             material="opacity: 1; src: #startimg; transparent:true" cursor-listener position="0 1200 100" width="25" height="25" depth="3" visible="true"></a-box>
             
 
@@ -467,6 +467,7 @@ AFRAME.registerComponent("listener", {
     function startGame(){
 
         gameon = true;
+        gameover = false;
 
         const second = 1000,
         minute = second * 60,
@@ -477,6 +478,8 @@ AFRAME.registerComponent("listener", {
         var time = 0;
         const timeup = 1000 * 90;
 
+
+        document.getElementById("hourglass").classList.add("hourglass");
 
         //placar e timer
         setInterval(function() {    
@@ -516,6 +519,7 @@ AFRAME.registerComponent("listener", {
 
             } else {
                 gameover=true;
+                document.getElementById("hourglass").classList.remove("hourglass");
                 if(!passeata){
                     iniciarPasseata();
                 }
