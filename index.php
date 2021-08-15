@@ -69,7 +69,7 @@
             </div>
             <div>
                 <div id="laps">
-                        <span id="min">0</span>:<span id="sec">20</span>:<span id="msec">20</span>
+                        <span id="min"></span>:<span id="sec"></span>:<span id="msec"></span>
                 </div>
             </div>
         </div>
