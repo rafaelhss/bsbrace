@@ -82,6 +82,11 @@
                 <img id="gramaimg" src="images/grama.jpg" crossorigin="anonymous" /> 
                 <img id="skyimg" src="images/sky.jpg" crossorigin="anonymous" /> 
                 <img id="justicaimg" src="images/justica.png" crossorigin="anonymous" /> 
+                <img id="mastroimg" src="images/mastro.png" crossorigin="anonymous" /> 
+                <img id="bandeiraimg" src="images/bandeira.jpg" crossorigin="anonymous" /> 
+                <img id="marbleimg" src="images/marble.jpg" crossorigin="anonymous" /> 
+                <img id="startimg" src="images/start.png" crossorigin="anonymous" /> 
+                <img id="logoimg" src="images/logo.png" crossorigin="anonymous" /> 
 
                 <img id="igrejaimg" src="images/igreja.png" crossorigin="anonymous" /> 
                 <img id="busimg" src="images/bus.jpg" crossorigin="anonymous" /> 
@@ -89,9 +94,18 @@
             
             <a-sky src="#skyimg" radius="6000"></a-sky> 
             
-            <a-camera id="cam"  listener="stepFactor:0.005" position="0 1000 -2400" look-controls="hmdEnabled: false; magicWindowTrackingEnabled: false">
+            <a-camera id="cam"  listener="stepFactor:0.005" look-controls="hmdEnabled: false; magicWindowTrackingEnabled: false"
+            animation="property: rotation; from:-20 100 0;  dur: 5000; easing: easeInOutQuad; loop: 0;"
+            animation__1="property: position; from:2000 300 -5000;  to: 0 1200 200; dur: 5000; easing: easeInOutQuad; loop: 0;">
+
 
             </a-camera>
+            <a-box id="logo"  
+            animation="property: position; from:0 620 -1620; to: 0 640 1300; dur: 2500;  delay: 90000; easing: easeInOutQuad; loop: 0;"
+            material="opacity: 1; src: #logoimg; transparent:true" cursor-listener position="0 1220 80" width="150" height="25" depth="3" visible="true"></a-box>
+            <a-box id="btnstart"  
+            animation="property: position; from:0 600 -1640; to: 0 620 1300; dur: 2500; delay: 90000; easing: easeInOutQuad; loop: 0;"
+            material="opacity: 1; src: #startimg; transparent:true" cursor-listener position="0 1200 100" width="25" height="25" depth="3" visible="true"></a-box>
             
 
             <a-sphere id="playerball" position="1200 10 2000" radius="10" dynamic-body visible="false"></a-sphere>
@@ -105,8 +119,8 @@
 
             <a-box id="senado1" width="200" height="800" depth="200" position="-150 401 -2120" static-body color="gray"></a-box>
             <a-box id="camara1" width="200" height="800" depth="200" position="150 401 -2120" static-body color="gray"></a-box> 
-            <a-sphere id="senado"  rotation="0 0 180" geometry="primitive:  sphere;  radius:  300;  thetaLength:  60" static-body  position="-550 300 -2120" color="gray"></a-sphere>
-            <a-sphere id="camara"  geometry="primitive:  sphere;  radius:  300;  thetaLength:  60"  static-body position="550 -150 -2120" color="gray"></a-sphere>
+            <a-sphere id="senado"  material="opacity: 1; repeat: 5 5; src: #marbleimg; side: double;" rotation="0 0 180" geometry="primitive:  sphere;  radius:  300;  thetaLength:  60" static-body  position="-550 300 -2120" color="gray"></a-sphere>
+            <a-sphere id="camara"  material="opacity: 1; repeat: 5 5; src: #marbleimg;" geometry="primitive:  sphere;  radius:  300;  thetaLength:  60"  static-body position="550 -150 -2120" color="gray"></a-sphere>
             <a-cone id="lago" geometry="height: 5; radiusBottom: 800; radiusTop: 800; thetaLength: 180" color="blue" position="0 3 -1700" material="" rotation="0 270 0"></a-cone>
 
             <a-box class="grama" id="terrain" width="7000" height="0.1" depth="7000" position="0 -2 1000" static-body visible="true" color="gray" material="opacity: 1; src: #gramaimg; repeat: 20 20;"></a-box>
@@ -122,7 +136,7 @@
             <a-box class="rua" id="rodoruaterrain" width="500" height="0.4" depth="2900" position="0 -0.5 3614" rotation="0 90 0" static-body visible="true" color="gray" material="opacity: 1; repeat: 5 40; src: #ruaimg;"></a-box>
             <a-box class="rua" id="rodoruaterrain2" width="500" height="0.4" depth="2900" position="0 -0.5 2400" rotation="0 90 0" static-body visible="true" color="gray" material="opacity: 1; repeat: 5 40; src: #ruaimg;"></a-box>
             
-            <a-box id="rodoteto" width="1200" height="30" depth="400" position="0 165 3000" static-body visible="true" color="gray"> </a-box>
+            <a-box id="rodoteto" material="opacity: 1; repeat: 5 40; src: #ruaimg;" width="400" height="30" depth="8000" rotation="0 90 0" position="0 165 3000" static-body visible="true" color="gray"> </a-box>
             <a-box id="rodobase" width="600" height="150" depth="250" position="0 75 3000" static-body visible="true" color="gray"> </a-box>
             <a-box id="bus1" position="-400 39.5 3350" material="opacity: 1; src: #busimg; repeat: 1 1;" dynamic-body color="gray" geometry="width: 80; height: 80; depth: 250" rotation="0 -45 0"> </a-box>
             <a-box id="bus2" position="0 39.5 3350" material="opacity: 1; src: #busimg; repeat: 1 1;" dynamic-body color="gray" geometry="width: 80; height: 80; depth: 250" rotation="0 -45 0"> </a-box>
@@ -134,11 +148,18 @@
             <a-box id="bus7" position="400 39.5 2700" material="opacity: 1; src: #busimg; repeat: 1 1;"  color="gray" geometry="width: 80; height: 80; depth: 250" rotation="0 -45 0"> </a-box>
             <a-box id="bus8" position="800 39.5 2700" material="opacity: 1; src: #busimg; repeat: 1 1;"  color="gray" geometry="width: 80; height: 80; depth: 250" rotation="0 -45 0"> </a-box>
 
+            <a-box id="bus9" position="400 217 2881" material="opacity: 1; src: #busimg; repeat: 1 1;"  color="gray" geometry="width: 80; height: 80; depth: 250" rotation="0 90 0"> </a-box>
+            <a-box id="bus10" position="800 217 3125" material="opacity: 1; src: #busimg; repeat: 1 1;"  color="gray" geometry="width: 80; height: 80; depth: 250" rotation="0 -90 0"> </a-box>
+            <a-box id="bus11" position="-1200 217 3125" material="opacity: 1; src: #busimg; repeat: 1 1;"  color="gray" geometry="width: 80; height: 80; depth: 250" rotation="0 -90 0"> </a-box>
+
 
             <a-box id="stf" width="600" height="300" depth="600" position="2000 -339 -4600" static-body visible="true" color="gray"> </a-box>
             <a-box id="justica" width="90" height="170" depth="90" position="1300 -255 -4300" material="opacity: 1; src: #justicaimg; repeat: 1 1; transparent:true" dynamic-body visible="true" color="gray"> </a-box>
             
             <a-box id="presidencia" width="600" height="300" depth="600" position="-2000 -339 -4600" static-body visible="true" color="gray"> </a-box>
+            
+            <a-cone id="mastro" material="opacity: 1; src: #mastroimg; repeat: 24; transparent:true" radius-bottom="60" radius-top="5" height="1000" position="0 150 -5500" visible="true" color="gray"> </a-cone>
+            <a-box id="bandeira" material="opacity:1; src: #bandeiraimg" width="300" height="200" depth="1" position="150 500 -5500" static-body visible="true" color="gray"> </a-box>
             
 
             <a-cone material="opacity: 1; src: #igrejaimg; repeat: 20 1; transparent:true" static-body geometry="primitive: cone; height: 120; radiusBottom: 200; radiusTop: 60" position="1700 60 1700"  id="igrejabaixo"></a-cone>
@@ -159,13 +180,11 @@
             <a-sphere id="enemy10" enemytype="1" class="enemy" position="1150 100 -900" radius="20" dynamic-body visible="true" ></a-sphere>
             
         <?php
-        
-
                 function setMinisterio($terrain_size){
 
                     $dist = 600;
 
-                    for ($i = -($terrain_size/4); $i <= $terrain_size/4; $i = $i+$dist) {
+                    for ($i = -($terrain_size/3); $i <= $terrain_size/3; $i = $i+$dist) {
                     echo "<a-entity
                     static-body
                     geometry=\"primitive: box; height: 200; width: 600; depth: 200; color: tomato;\"
@@ -181,20 +200,8 @@
                     }
                 }
 
-
-                function setEnemies(){
-
-                }
-
-                                
                 $terrain_size = 5000;
                 setMinisterio($terrain_size);
-
-
-
-
-
-                
         ?>
 
                 
@@ -213,6 +220,7 @@
     var minhip = 1.2;
     var accelerating = true;
     var gameover = false;
+    var gameon = false;
 
     const cores = ["red", "yellow"];
     
@@ -232,15 +240,14 @@
     ["enemy10", 0, 500, -150]];
 
 
+    //inicializa os enemy com a cor correspondente
     for(var i = 0; i < enemies.length; i++){
         var enemyEl = document.getElementById(enemies[i][0]);
-
-
         enemyEl.setAttribute("color", cores[Number(enemyEl.getAttribute("enemytype"))])
-            
     }
 
 
+    //chamada a cada milisegundo para atualizar a velocidade de cada enemy
     function enemyinterval(enemyn){
         var enemyEl = document.getElementById(enemies[enemyn][0]);
         const x = Number(enemyEl.getAttribute("position").x); 
@@ -249,8 +256,6 @@
         var origVelX = Number(enemyEl.body.velocity.x);
         var origVelY = -100;//Number(enemyEl.body.velocity.y);
         var origVelZ = Number(enemyEl.body.velocity.z);
-        
-
         
         const basevel = enemies[enemyn][2];
         
@@ -263,7 +268,6 @@
         [1400,3750]  
         ]
 
-
         var target = [
             [(targetBase[0][0] + enemies[enemyn][3]),(targetBase[0][1] + enemies[enemyn][3])],
             [(targetBase[1][0] + enemies[enemyn][3]),(targetBase[1][1] + enemies[enemyn][3])],
@@ -272,38 +276,35 @@
         ]
 
         for(var i = 0; i < target.length; i++){
-        if(
-            (x < ((target[i][0]) + spacing)) && 
-            (x > ((target[i][0]) - spacing)) &&
-            (z < ((target[i][1]) + spacing)) && 
-            (z > ((target[i][1]) - spacing))
-            ){ // chegeuei no target. vamo po porx
-            enemies[enemyn][1] = i+1;
-            if(enemies[enemyn][1] >= 4){
-                enemies[enemyn][1] = 0;
+            if(
+                (x < ((target[i][0]) + spacing)) && 
+                (x > ((target[i][0]) - spacing)) &&
+                (z < ((target[i][1]) + spacing)) && 
+                (z > ((target[i][1]) - spacing))
+                ){ // chegeuei no target. vamo po porx
+                enemies[enemyn][1] = i+1;
+                if(enemies[enemyn][1] >= 4){
+                    enemies[enemyn][1] = 0;
+                }
             }
         }
-        }
-
 
         
         if(x > (target[enemies[enemyn][1]][0])+spacing){
-        origVelX = (0-basevel);
+            origVelX = (0-basevel);
         } else if(x < (target[enemies[enemyn][1]][0])-spacing){
-        origVelX = (basevel);
+            origVelX = (basevel);
         } else {
             origVelX = 0;
         }
 
         if(z > (target[enemies[enemyn][1]][1]+spacing)){
-        origVelZ = (0-basevel);
+            origVelZ = (0-basevel);
         } else if(z < (target[enemies[enemyn][1]][1]-spacing)){
-        origVelZ = (basevel);
+            origVelZ = (basevel);
         } else {
             origVelZ = 0;
         }
-
-
 
 
         try {
@@ -320,33 +321,8 @@
         }
     }, 250)
 
-    setInterval(function(){
-        if(accelerating && hip <= maxhip){
-            hip = hip + 50;
-            //document.getElementById("ghost").setAttribute("color", "red");  
-            //console.log("maxhip: " + maxhip);
-            //document.getElementById("acc").innerHTML = "throttle";
-            
-        } 
-        if((!accelerating && hip >= minhip)){
-            hip = hip-50;
-            //document.getElementById("ghost").setAttribute("color", "blue");  
-            //document.getElementById("acc").innerHTML = "break";
-        }
-        if (hip >= maxhip){
-            hip = hip - 10;
-        }
-        if (hip <= 0 || gameover){
-            hip = 0;
-        }
 
-        var t = (hip / maxhip_ini)*100
-        var b = 100-t;
-
-        //document.getElementById("acc").style.background = "linear-gradient(to left, blue " + b + "%, green "+ t +"%)";
-        document.getElementById("acc").style.background = "linear-gradient(to left, red, " + b + "%, green)";
-        
-    }, 50)   
+ 
 
 
 
@@ -382,8 +358,16 @@
 
     AFRAME.registerComponent('cursor-listener', {
         init: function () {
+            console.log("click2");
+                
             this.el.addEventListener('mousedown', function (evt) {
                 console.log("click");
+                console.log(evt.srcElement.id)
+                if(evt.srcElement.id == "btnstart"){
+                    console.log("clickstart");
+                    startGame();
+                }
+                
                 accelerating = false;
             });
             this.el.addEventListener('mouseup', function (evt) {
@@ -396,49 +380,14 @@
         return ((2*Math.PI)/360*valDeg)
     }
         
-    AFRAME.registerComponent("listener", {
-        schema : 
-        {
-            stepFactor : {
-                type : "number",
-                default : 0.05
-            }
-        },
-        tick : function()
-        {	
-            var angle = (document.getElementById("cam").getAttribute("rotation").y);
-            
-            
-            var velocityX = 10;
-            var velocityY = 10;
-
-            velocityX = hip * Math.sin(DegreesToRadians(angle))
-            velocityZ = hip * Math.cos(DegreesToRadians(angle))
-            
-            var origVelX = document.getElementById("playerball").body.velocity.x;
-            var origVelY = document.getElementById("playerball").body.velocity.y;
-            var origVelZ = document.getElementById("playerball").body.velocity.z;
-            
-            
-            //modo direto
-            document.getElementById("playerball").body.velocity.set(-velocityX, origVelY, -velocityZ);
-            
-        
-            //updade camera
-            if(!gameover){
-                updateCamera(this.el, document.getElementById("ghost")); 
-            } else {
-                this.el.components.camera.camera.parent.position.set(0, 600, 1400); 
-            }
-        }
-    });
-
+    
 
 
     var lapcolisionlist = [];
     var colisionwhitelist = [];
     var playerEl = document.getElementById("playerball")
 
+    //colisoes
     playerEl.addEventListener('collide', function (e) {
         
     if(e.detail.body.el.className.indexOf("grama") >=0){
@@ -449,7 +398,6 @@
             const id = e.detail.body.el.getAttribute("id");
             if(lapcolisionlist.indexOf(id) === -1) {
                 lapcolisionlist.push(id);
-                console.log(lapcolisionlist)
             }
         }
         if(e.detail.body.el.className.indexOf("enemy") >=0){
@@ -474,62 +422,146 @@
         }
     }); 
 
-
-    const second = 1000,
-    minute = second * 60,
-    hour = minute * 60,
-    day = hour * 24;
-    var distance = 0;
-
-    var time = 0;
-    const timeup = 1000 * 90;
-
-
-    x = setInterval(function() {    
-        
-
-        if(time <= timeup) {
-            if(
-                (lapcolisionlist.indexOf("rodoruaterrain") >= 0) &&
-                (lapcolisionlist.indexOf("ruadirterrain") >= 0) &&
-                (lapcolisionlist.indexOf("pracaruaterrain") >= 0) &&
-                (lapcolisionlist.indexOf("ruaesqterrain") >= 0)
-            )
+//atualiza a playerball
+AFRAME.registerComponent("listener", {
+            schema : 
             {
-                distance = 0;
-                lapcolisionlist.length = 0;
-                document.getElementById('laps').innerHTML = 
-                    document.getElementById('laps').innerHTML + "<div>"
-                    + document.getElementById('min').innerHTML + ":"
-                    + document.getElementById('sec').innerHTML + ":"
-                    + document.getElementById('msec').innerHTML + "</div>";
-
-            }            
+                stepFactor : {
+                    type : "number",
+                    default : 0.05
+                }
+            },
+            tick : function()
+            {	
+                var angle = (document.getElementById("cam").getAttribute("rotation").y);
                 
                 
-            distance += 50;
-            time += 50;
-            document.getElementById('min').innerText = ('0' + (Math.floor((distance/1000)/60) % 60)).slice(-2);
-            document.getElementById('sec').innerText = ('0' + (Math.floor(distance/1000) % 60)).slice(-2);  
-            document.getElementById('msec').innerText = ('00' + Math.floor(distance % 1000)).slice(-3);// Math.floor((distance % (day)) / 
-        
-            var dots = document.getElementsByClassName("dot");
-            for (var i = 0; i < dots.length; i++) {
-                dots[i].style.background= "linear-gradient(45deg, "+ cores[1] +", white)";
-            }
-            for (var i = 0; i < Number(document.querySelectorAll('[enemytype="0"]').length); i++) {
-                dots[i].style.background = "linear-gradient(45deg, "+ cores[0] +", white)";
-            }
+                var velocityX = 10;
+                var velocityY = 10;
 
-
-        } else {
-            gameover=true;
-            if(!passeata){
-                iniciarPasseata();
-            }
+                velocityX = hip * Math.sin(DegreesToRadians(angle))
+                velocityZ = hip * Math.cos(DegreesToRadians(angle))
+                
+                var origVelX = document.getElementById("playerball").body.velocity.x;
+                var origVelY = document.getElementById("playerball").body.velocity.y;
+                var origVelZ = document.getElementById("playerball").body.velocity.z;
+                
+                
+                //modo direto
+                document.getElementById("playerball").body.velocity.set(-velocityX, origVelY, -velocityZ);
+                
             
-        }   
-    }, 50)
+                //updade camera
+                if(!gameover && gameon){
+                    updateCamera(this.el, document.getElementById("ghost")); 
+                } else {
+                    if(gameover){
+                        this.el.components.camera.camera.parent.position.set(0, 600, 1400); 
+                    }
+                    
+                }
+            }
+        });
+
+
+    function startGame(){
+
+        gameon = true;
+
+        const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+        var distance = 0;
+
+        var time = 0;
+        const timeup = 1000 * 90;
+
+
+        //placar e timer
+        setInterval(function() {    
+            if(time <= timeup) {
+                if(
+                    (lapcolisionlist.indexOf("rodoruaterrain") >= 0) &&
+                    (lapcolisionlist.indexOf("ruadirterrain") >= 0) &&
+                    (lapcolisionlist.indexOf("pracaruaterrain") >= 0) &&
+                    (lapcolisionlist.indexOf("ruaesqterrain") >= 0)
+                )
+                {
+                    distance = 0;
+                    lapcolisionlist.length = 0;
+                    document.getElementById('laps').innerHTML = 
+                        document.getElementById('laps').innerHTML + "<div>"
+                        + document.getElementById('min').innerHTML + ":"
+                        + document.getElementById('sec').innerHTML + ":"
+                        + document.getElementById('msec').innerHTML + "</div>";
+
+                }            
+                    
+                    
+                distance += 50;
+                time += 50;
+                document.getElementById('min').innerText = ('0' + (Math.floor((distance/1000)/60) % 60)).slice(-2);
+                document.getElementById('sec').innerText = ('0' + (Math.floor(distance/1000) % 60)).slice(-2);  
+                document.getElementById('msec').innerText = ('00' + Math.floor(distance % 1000)).slice(-3);// Math.floor((distance % (day)) / 
+            
+                var dots = document.getElementsByClassName("dot");
+                for (var i = 0; i < dots.length; i++) {
+                    dots[i].style.background= "linear-gradient(45deg, "+ cores[1] +", white)";
+                }
+                for (var i = 0; i < Number(document.querySelectorAll('[enemytype="0"]').length); i++) {
+                    dots[i].style.background = "linear-gradient(45deg, "+ cores[0] +", white)";
+                }
+
+
+            } else {
+                gameover=true;
+                if(!passeata){
+                    iniciarPasseata();
+                }
+                
+            }   
+        }, 50)
+
+
+        //acelera a playerball
+        setInterval(function(){
+            if(accelerating && hip <= maxhip){
+                hip = hip + 50;
+                //document.getElementById("ghost").setAttribute("color", "red");  
+                //console.log("maxhip: " + maxhip);
+                //document.getElementById("acc").innerHTML = "throttle";
+                
+            } 
+            if((!accelerating && hip >= minhip)){
+                hip = hip-50;
+                //document.getElementById("ghost").setAttribute("color", "blue");  
+                //document.getElementById("acc").innerHTML = "break";
+            }
+            if (hip >= maxhip){
+                hip = hip - 10;
+            }
+            if (hip <= 0 || gameover){
+                hip = 0;
+            }
+
+            var t = (hip / maxhip_ini)*100
+            var b = 100-t;
+
+            //document.getElementById("acc").style.background = "linear-gradient(to left, blue " + b + "%, green "+ t +"%)";
+            document.getElementById("acc").style.background = "linear-gradient(to left, red, " + b + "%, green)";
+            
+        }, 50)  
+
+
+
+        
+
+
+    }
+    
+
+    //setTimeout(function(){startGame();}, 1000)
 
 
     var passeata = false;
