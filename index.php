@@ -104,7 +104,6 @@
             animation="property: position; from:0 620 -1620; to: 0 640 1300; dur: 2500;  delay: 90000; easing: easeInOutQuad; loop: 0;"
             material="opacity: 1; src: #logoimg; transparent:true" cursor-listener position="0 1220 80" width="150" height="25" depth="3" visible="true"></a-box>
             <a-box id="btnstart"  
-            animation="property: position; from:0 600 -1650; to: 0 620 1300; dur: 2500; delay: 90000; easing: easeInOutQuad; loop: 0;"
             material="opacity: 1; src: #startimg; transparent:true" cursor-listener position="0 1200 100" width="25" height="25" depth="3" visible="true"></a-box>
             
 
